@@ -18,6 +18,37 @@
         <!--<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
         -->
 
+        <style type="text/css">
+            /* DEFINICION DE TODAS LAS ANIMACIONES */
+            /* ANIMACION 1 */
+            @keyframes a1 {
+                0% { left: 20%; top: 10%; height: 10%; width: 10%; transform: rotate(0deg); }
+                5% { left: 20%; top: 90%; height: 10%; width: 10%; transform: rotate(0deg); }
+                10% { left: 90%; top: 90%; height: 10%; width: 10%; transform: rotate(0deg); }
+                15% { left: 45%; top: 45%; height: 10%; width: 10%; transform: rotate(0deg); }
+                20% { left: 0; top: 0; height: 100%; width: 100%; transform: rotate(0deg); }
+                90% { left: 0; top: 0; height: 100%; width: 100%; transform: rotate(1200deg); }
+                100% { left: 20%; top: 10%; height: 10%; width: 100%; transform: rotate(0deg);}
+            }
+            @keyframes a2 {
+                0% { left: 20%; top: 10%; height: 10%; width: 10%; transform: perspective(600px) rotateY(45deg); transition-delay: 1s;}
+                100% { width: 100%; transform: rotate(0deg); transform: perspective(0px) rotateY(0deg);}
+            }
+            @keyframes a3 {
+                0% {transform: rotateX(-60deg);}
+                100% {transition-timing-function: ease-in; transform: rotateX(0deg);}
+            }
+
+            @keyframes a4 {
+                0% {transform: translateX(200%);}
+                100% {transition-timing-function: ease-in; transform: translateX(0%);}
+            }
+
+            @keyframes a5{
+                100% {-webkit-transform:rotateY(-90deg);}
+            }
+  
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -62,19 +93,19 @@
             </div> <!-- top-section -->
             <div class="main-navigation">
                 <ul class="navigation">
-                    <li><a href="#top" onclick="animarPortada();"><i class="fa fa-home"></i>Inicio</a></li>
-                    <li><a href="#about"><i class="fa fa-info"></i>Acerca del Portafolio</a></li>
-                    <li><a href="#practicas"><i class="fa fa-paperclip"></i>Portaforlio Prácticas</a></li>
-                    <li><a href="#juegos"><i class="fa fa-gamepad"></i>Portafolio de Videojuegos</a></li>
-                    <li><a href="#contact"><i class="fa fa-image"></i>Portafolio de Multimedia</a></li>
-                    <li><a href="#contact"><i class="far fa-file-pdf"></i>Manual Técnico</a></li>
-                    <li><a href="#contact"><i class="far fa-file-video"></i>Videos de Opinión</a></li>
+                    <li><a href="#portada" onclick="animarPortada();animarTransicion(1);"><i class="fa fa-home"></i>Inicio</a></li>
+                    <li><a href="#acerca" onclick="animarTransicion(2);"><i class="fa fa-info"></i>Acerca del Portafolio</a></li>
+                    <li><a href="#practicas" onclick="animarTransicion(3);"><i class="fa fa-paperclip"></i>Portaforlio Prácticas</a></li>
+                    <li><a href="#juegos" onclick="animarTransicion(4);"><i class="fa fa-gamepad"></i>Portafolio de Videojuegos</a></li>
+                    <li><a href="#multimedia" onclick="animarTransicion(5);"><i class="fa fa-image"></i>Portafolio de Multimedia</a></li>
+                    <li><a href="#manual" onclick="animarTransicion(7);"><i class="far fa-file-pdf"></i>Manual Técnico</a></li>
+                    <li><a href="#opinion" onclick="animarTransicion(6);"><i class="far fa-file-video"></i>Videos de Opinión</a></li>
                 </ul>
             </div> <!-- .main-navigation -->
         </div> <!-- .sidebar-menu -->
         
-
-        <div class="banner-bg" id="top">
+        
+        <div class="banner-bg" id="portada">
             <div class="banner-overlay"></div>
             <div class="welcome-text">
                 <div id="t_portada">PORTAFOLIO DE EVIDENCIAS UNIDAD II</div>
@@ -93,7 +124,7 @@
                 <div class="content-wrapper">
                 
                     <!-- ABOUT -->
-                    <div class="page-section" id="about">
+                    <div class="page-section" id="acerca">
                     <div class="row">
                         <div class="col-md-12">
                             <h4 class="widget-title">Acerca del Portafolio de Evidencias</h4>
@@ -327,6 +358,130 @@
                     </div>
                     <hr>
 
+                    <!-- MULTIMEDIA -->
+                    <div class="page-section" id="multimedia">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="widget-title">PORTAFOLIO DE MULTIMEDIA</h4>
+                                <p>A continuación se muestra el portafolio de multimedia desarrolladas en clase.</p>
+                            </div>
+                        </div>
+                        <div class="row projects-holder">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="project-item">
+                                    <img src="multimedia/1/1.png" alt="">
+                                    <div class="project-hover">
+                                        <a href="#" data-toggle="modal" onclick="abrirVentana(1,3);">
+                                            <div class="inside">
+                                                <h5>Galería Practica 7</h5>
+                                                <p>Desarrollar un ejemplo de galería con carga de imágenes desde XML.</p>
+                                            </div>    
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="project-item">
+                                    <img src="multimedia/2/2.png" alt="">
+                                    <div class="project-hover">
+                                        <a href="#" data-toggle="modal" onclick="abrirVentana(2,3);">
+                                            <div class="inside">
+                                                <h5>Galería de Videos</h5>
+                                                <p>Colección de videos explicando el desarrollo del juego Serpientes y Escaleras.</p>
+                                            </div>    
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="project-item">
+                                    <img src="multimedia/3/3.png" alt="">
+                                    <div class="project-hover">
+                                        <a href="#" data-toggle="modal" onclick="abrirVentana(3,3);">
+                                            <div class="inside">
+                                                <h5>Galería de 20 imágenes</h5>
+                                                <p>Desarrollo de una galeria de 20 imágenes con pantalla completa.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- MANUAL -->
+                    <div class="page-section" id="manual">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="widget-title">MANUAL TÉCNICO DE LA INTERFAZ</h4>
+                                <p>A continuación se muestra Manual Técnico de la interfaz.</p>
+                            </div>
+                        </div>
+                        <div class="row projects-holder">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="project-item">
+                                    <img src="manual/1/1.png" alt="">
+                                    <div class="project-hover">
+                                        <a href="#" data-toggle="modal" onclick="abrirVentana(1,5);">
+                                            <div class="inside">
+                                                <h5>Manual Técnico</h5>
+                                                <p>Manual donde se detalla el desarrollo de la interfaz.</p>
+                                            </div>    
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- VIDEOS DE OPINION -->
+                    <div class="page-section" id="opinion">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="widget-title">PORTAFOLIO DE VIDEOS DE OPINIÓN</h4>
+                                <p>A continuación se muestra el portafolio de videos de opinión de la práctica.</p>
+                            </div>
+                        </div>
+                        <div class="row projects-holder">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="project-item">
+                                    <img src="opinion/1/1.png" alt="">
+                                    <div class="project-hover">
+                                        <a href="#" data-toggle="modal" onclick="abrirVentana(1,4);">
+                                            <div class="inside">
+                                                <h5>Video opinión - Español</h5>
+                                                <p>Video de opinión de la práctica en español.</p>
+                                            </div>    
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="project-item">
+                                    <img src="opinion/2/2.png" alt="">
+                                    <div class="project-hover">
+                                        <a href="#" data-toggle="modal" onclick="abrirVentana(2,4);">
+                                            <div class="inside">
+                                                <h5>Video opinión - Inglés</h5>
+                                                <p>Video de opinión de la práctica en inglés.</p>
+                                            </div>    
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <hr>
+
                     <div class="row" id="footer">
                         
                     </div>
@@ -363,44 +518,98 @@
         <script src="js/min/plugins.min.js"></script>
         <script src="js/min/main.min.js"></script>
 
+        <!-- CODIGO DE FUENTE LOGICA JAVASCRIPT -->
         <script type="text/javascript">
+            // Esta variable almacena el URL de la practica, cambia dinamicamente conforme el selector
             var url;
+
             $( document ).ready(function() {
                 // Script para los Tweens de la portada del portafolio
-                console.log("Entra a animar");
+                //console.log("Entra a animar");
                 animarPortada();
             });
 
+            // Esta función crea el efecto de los Tweens en la portada principal
             function animarPortada(){
+                // Se modifica su posicion para que salga desde la izquierda hacia el centro
                 $("#t_portada").css("margin-left","0");
                 $("#t_materia").css("margin-left","0");
                 $("#t_alumno").css("margin-left","0");
                 $("#t_grupo").css("margin-left","0");
                 $("#t_upv").css("margin-left","0");
 
+                // Comienza el bloque de animaciones con un efecto easeOutElastic
                 $("#t_portada").animate({ "margin-left": "10%" }, {duration:2000, easing:'easeOutElastic'});
+                // Despues de 500 milisegundos se lanza la animacion del texto de materia y maestro
                 setTimeout(function(){
                     $("#t_materia").animate({ "margin-left": "20%" }, "slow" );
                     $("#t_maestro").animate({ "margin-left": "20%" }, "slow" );
                 },500);
+                // Despues de 800 milisegundos se lanza el movimiento del nombre del alumno
                 setTimeout(function(){
                     $("#t_alumno").animate({ "margin-left": "20%" }, "slow" );
                 },800);
-
+                // Despues del segundo se mueve el texto de grupo
                 setTimeout(function(){
                     $("#t_grupo").animate({ "margin-left": "20%" }, "slow" );
                 },1000);
-
+                // Se realiza una animación de rebote con el logo de la UPV
                 $('#t_upv').show().animate({ "margin-left": "40%" }, {duration: 2000, easing: 'easeOutBounce'});
 
             }
 
+            // Esta función se ejecuta al dar click en cada uno de los elementos del Menu
+            function animarTransicion(pagina){
+                // Esta variable se le asigna el contenedor correspondiente segun la pestaña elegida
+                var selector;
+                // Se evalua en que pagina o pestaña esta para determinar el selector de la página
+                switch(pagina){
+                    case 1:
+                        selector = $("#portada");
+                        break;
+                    case 2:
+                        selector = $("#acerca");
+                        break;
+                    case 3:
+                        selector = $("#practicas");
+                        break;
+                    case 4:
+                        selector = $("#juegos");
+                        break;
+                    case 5:
+                        selector = $("#multimedia");
+                        break;
+                    case 6:
+                        selector = $("#opinion");
+                        break;
+                    case 7:
+                        selector = $("#manual");
+                        break;
+                }
+                // Arreglo del selector de animaciones
+                var listaAnimaciones = ['a1','a2','a3','a4','a5'];
+
+                // Seleccionar animación random del arreglo de animaciones (a1,a2,a3...)
+                var rdm = Math.floor(Math.random() * listaAnimaciones.length) + 0;
+                // Limpiar la propiedad de animacion anterior, para evitar empalmes 
+                selector.css({'animation':''});
+                // Aplicar animacion
+                selector.css({
+                    'animation':listaAnimaciones[rdm]+' 2s'
+                });
+
+            }
+
+            // Esta función se ejecuta al darle click a cualquier elemento de los portafolios
+            // Se le pasa como parametro el número de pág. actual y la modalidad
+            // Tiene distintas modalidades que se representan con el parametro "mod"
             function abrirVentana(pnum,mod){
                 // Limpiar el contenido del contenedor del HTML SWF
                 $('#contenedor_swf').empty();
-                //$('#contenedor_swf').load("practicas/"+pnum+"/"+pnum+".html");
+
                 var urlpractica="";
-                
+                var descargar = false;
+                // Se evalua el modo -1 practicas, 2 - juegos, 3 - Multimedia
                 if(mod==1){
                     urlpractica = "practicas/"+pnum+"/"+pnum+".html";
                     // Actualizar la etiqueta de nombre de la practica
@@ -410,32 +619,45 @@
                     urlpractica = "juegos/"+pnum+"/"+pnum+".html";
                     // Actualizar la etiqueta de nombre de la practica
                     $('#nombre_practica').text("Juego "+pnum);
-                }else{
-                    urlpractica = "multimedia/"+pnum+"/"+pnum+".html";
+                }else if(mod==3){
+                    descargar = true;
+                    urlpractica = "multimedia/"+pnum+"/"+pnum+".zip";
                     // Actualizar la etiqueta de nombre de la practica
                     $('#nombre_practica').text("Multimedia "+pnum);
+                }else if(mod==4){
+                    //descargar = true;
+                    urlpractica = "opinion/"+pnum+"/"+pnum+".mp4";
+                    // Actualizar la etiqueta de nombre de la practica
+                    $('#nombre_practica').text("Video "+pnum);
+                }else{
+                    //descargar = true;
+                    urlpractica = "manual/"+pnum+"/"+pnum+".pdf";
+                    // Actualizar la etiqueta de nombre de la practica
+                    $('#nombre_practica').text("Manual Técnico ");
                 }
+                // Actualizar el valor del url de la practica/juego/multimedia
                 url = urlpractica;
                 
-                /*$.ajax({
-                    url: urlpractica,
-                    dataType: "html"
-                }).done(function( responseHtml ) {
-                    $("#contenedor_swf").html(responseHtml);
-                });*/
+                // Si esta activa la bandera para descargar, entonces añadir el botón en el contenedor de la ventana
+                if(descargar){
+                    $('#contenedor_swf').html('<a href="'+urlpractica+'" target="_blank" class="btn btn-warning btn-lg">Descargar</a>');    
+                }else{
+                    // Añadir al contenedor de la ventana el contenido del HTML con el SWF
+                    $('#contenedor_swf').html('<iframe id="frameswf" src="'+urlpractica+'" width="600px" height="500px"  frameborder="0"></iframe>');
 
-                $('#contenedor_swf').html('<iframe id="frameswf" src="'+urlpractica+'" width="600px" height="500px"  frameborder="0"></iframe>');
-
-                // Añadir evento de click al boton ampliar de la ventana
-                $("#btn_ampliar").attr("onclick","abrirAmpliada("+pnum+","+mod+");");
+                    // Añadir evento de click al boton ampliar de la ventana
+                    $("#btn_ampliar").attr("onclick","abrirAmpliada("+pnum+","+mod+");");    
+                }
+                
+                // Mostrar ventana modal
                 $('#ventanaswf').modal('show');
             }
 
+            // Esta función abre el HTML de la práctica de forma individual en otra pestaña
             function abrirAmpliada(pnum,mod){
                 window.open(url, '_blank');                
             }
                 
         </script>
-            }
     </body>
 </html>
